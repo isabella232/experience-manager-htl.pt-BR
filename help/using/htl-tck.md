@@ -7,7 +7,7 @@ seo-description: HTL é o sistema oficial de modelo do servidor para AEM, e o TC
 uuid: cdfe 68 f 3-d 26 a -4 c 1 f-a 41 b-a 35 f 849288 b 7
 discoiquuid: 5 af 8 b 9 d 6-d 776-4 b 49-be 12-6492 e 0016096
 translation-type: tm+mt
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 ---
 
