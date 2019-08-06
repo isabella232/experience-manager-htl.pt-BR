@@ -1,13 +1,8 @@
 ---
-title: Visão geral
-seo-title: Visão geral
-description: A finalidade do HTL com suporte pelo AEM é oferecer uma estrutura da
-  Web altamente produtiva que aumente a segurança e permite que desenvolvedores HTML
-  sem conhecimento Java participem melhor dos projetos do AEM.
-seo-description: A finalidade do HTML Template Language - HTL - suportado pelo Adobe
-  Experience Manager, é oferecer uma estrutura da Web em nível empresarial altamente
-  produtiva que aumente a segurança e permite que desenvolvedores HTML sem conhecimento
-  Java participem melhor dos projetos do AEM.
+title: Visão geral HTL do AEM
+seo-title: Visão geral da documentação técnica HTL do AEM.
+description: A finalidade do HTL com suporte pelo AEM é oferecer uma estrutura da Web altamente produtiva que aumente a segurança e permite que desenvolvedores HTML sem conhecimento Java participem melhor dos projetos do AEM.
+seo-description: Este documento apresenta os princípios e a finalidade do Linguagem de modelo HTML - HTL - compatível com o Adobe Experience Manager. O HTL é uma estrutura da Web altamente produtiva no nível da empresa que aumenta a segurança e permite que desenvolvedores HTML sem conhecimento Java participem melhor dos projetos do AEM.
 uuid: 8 f 486325-0 a 1 b -4186-a 998-96 fc 0034 c 44 a
 contentOwner: Usuário
 products: SG_ EXPERIENCEMANAGER/HTL
@@ -16,7 +11,7 @@ content-type: referência
 discoiquuid: 8 f 779 e 08-94 c 7-43 bc-a 6 e 5-d 81 a 9 f 818 c 5 c
 mwpw-migration-script-version: 2017-10-12 T 21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: 1d4565a4cffa6e5d42d6a5242f7ce62203dc7c63
 
 ---
 
