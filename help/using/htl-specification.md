@@ -3,26 +3,26 @@ title: A especificação HTL
 seo-title: A especificação HTL
 description: A especificação HTL da Adobe
 seo-description: Informações sobre a especificação HTL do Adobe AEM
-uuid: 507 d 9566-93 ae -4274-b 379-65 ccebcd 6 bb 2
+uuid: 507d9566-93ae-4274-b379-65ccebcd6bb2
 contentOwner: Usuário
-products: SG_ EXPERIENCEMANAGER/HTL
+products: SG_EXPERIENCEMANAGER/HTL
 topic-tags: html-template-language
 content-type: referência
-deleted: 2017-10-23 T 14 29 42.840-0400
+deleted: 2017-10-23T14 29 42.840-0400
 deletedby: alvawb
-discoiquuid: 7 fb 48 e 5 d -7 d 8 d -4 fb 3-9 f 2 d -59 ce 7669 dcaf
-mwpw-migration-script-version: 2017-10-12 T 21 46 58.665-0400
+discoiquuid: 7fb48e5d-7d8d-4fb3-9f2d-59ce7669dcaf
+mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 redirecttarget: https //github.com/Adobe-Marketing-Cloud/sightly-spec
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: 3bd23c7a662024b236898d129728bef8b554f3ed
 
 ---
 
 
 # A especificação HTL
 
-O HTML Template Language (HTL), anteriormente conhecido como Sightly, foi introduzido com o Adobe Experience Manager 6.0 e assume o lugar do JSP (javaserver Pages) como o sistema de modelo de modelo de HTML preferido e recomendado.
+A Linguagem de modelo HTML (HTL), anteriormente conhecida como Sightly, foi introduzida com o Adobe Experience Manager 6.0 e substitui o JSP (JavaServer Pages) como o sistema de modelo preferencial e recomendado para HTML do lado do servidor.
 
-Essa é a Especificação HTL que define a sintaxe e o comportamento do idioma.
+Esta é a Especificação HTL que define a sintaxe e o comportamento do idioma.
 
-A Especificação completa HTL é detalhada em nosso [repositório Open Source Git](https://github.com/adobe/htl-spec)
+A especificação HTL completa está detalhada em nosso repositório Git de código [aberto](https://github.com/adobe/htl-spec)
