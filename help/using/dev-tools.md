@@ -3,32 +3,32 @@ title: Ferramentas do desenvolvedor
 seo-title: Ferramentas do desenvolvedor
 description: Uma lista de ferramentas de desenvolvimento HTL
 seo-description: Uma lista de ferramentas de desenvolvimento HTL
-uuid: cfedb 0 d 3-016 e -4 eca -965 d-b 5 c 2 d 217 e 919
+uuid: cfedb0d3-016e-4eca-965d-b5c2d217e919
 contentOwner: Usuário
-products: SG_ EXPERIENCEMANAGER/HTL
+products: SG_EXPERIENCEMANAGER/HTL
 content-type: referência
 topic-tags: html-template-language
-discoiquuid: 688 d 7 ae 8-bbda -4153-89 bb-c 51812 f 0 c 0 a 7
-mwpw-migration-script-version: 2017-10-12 T 21 46 58.665-0400
+discoiquuid: 688d7ae8-bbda-4153-89bb-c51812f0c0a7
+mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 index: y
 internal: n
 snippet: y
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: eb80a5859f86c894dbcb53bbfc9e2841c48a7d98
 
 ---
 
 
 # Ferramentas do desenvolvedor{#developer-tools}
 
-As seguintes ferramentas do desenvolvedor estão disponíveis para HTL:
+As seguintes ferramentas de desenvolvedor estão disponíveis para HTL:
 
-* [Loop de impressão eval HTL](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl)\
-   Um ambiente de execução ao vivo para reprodução com o idioma, ótimo para aprender.
+* [Leitura HTL - Leitura do Loop de Impressão Final](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl)\
+   Um ambiente de execução ao vivo para brincar com a linguagem, ótimo para aprender.
 
-* [Extensão do AEM Brackets](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-brackets.html)\
-   Uma ferramenta fácil para desenvolvedores front-end trabalharem em componentes AEM.
+* [Extensão de colchetes AEM](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-brackets.html)\
+   Uma ferramenta fácil para desenvolvedores front-end trabalharem em componentes do AEM.
 
 * [Extensão do AEM Eclipse](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-eclipse.html)\
-   Uma ferramenta para desenvolvedores back-end criar projetos do AEM e editá-los facilmente.
+   Uma ferramenta para desenvolvedores de back-end para criar projetos do AEM e editá-los facilmente.
 
