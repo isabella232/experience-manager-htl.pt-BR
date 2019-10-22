@@ -1,6 +1,6 @@
 ---
-title: Linguagem de expressão HTL
-seo-title: Linguagem de expressão HTL
+title: Linguagem de expressão do HTL
+seo-title: Linguagem de expressão do HTL
 description: A Linguagem de modelo HTML usa uma linguagem de expressão para acessar as estruturas de dados que fornecem os elementos dinâmicos da saída HTML.
 seo-description: 'A Linguagem de modelo HTML usa uma linguagem de expressão para acessar as estruturas de dados que fornecem os elementos dinâmicos da saída HTML. '
 uuid: 38b4a259-03b5-4847-91c6-e20377600070
@@ -11,12 +11,12 @@ content-type: referência
 discoiquuid: 9ba37ca0-f318-48b0-a791-a944a72502ed
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 84ed515309831fe413abf317d8739f2bba79afdb
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
 
-# Linguagem de expressão HTL {#htl-expression-language}
+# Linguagem de expressão do HTL {#htl-expression-language}
 
 A Linguagem de modelo HTML usa uma linguagem de expressão para acessar as estruturas de dados que fornecem os elementos dinâmicos da saída HTML. Essas expressões são delimitadas por caracteres `${` e `}`. Para evitar HTML malformado, as expressões só podem ser usadas em valores de atributo, no conteúdo do elemento ou em comentários.
 
@@ -45,8 +45,10 @@ Sem precisar especificar nada, o HTL fornece acesso a todos os objetos que norma
 
 Há duas maneiras de acessar propriedades de variáveis, com uma notação de ponto ou com uma notação de colchete:
 
-`${currentPage.title}  
-${currentPage['title']} or ${currentPage["title"]}`
+```
+${currentPage.title}  
+${currentPage['title']} or ${currentPage["title"]}
+```
 
 A notação de pontos mais simples deve ser preferida para a maioria dos casos, e a notação de colchetes deve ser usada para acessar propriedades que contêm caracteres de identificador inválidos ou para acessar propriedades dinamicamente. Os dois capítulos seguintes fornecerão pormenores sobre estes dois casos.
 
@@ -222,7 +224,7 @@ Esse operador pode ser usado para testar se uma das duas condições se aplicam,
 
 Como o operador OR lógico retorna a primeira variável verdadeira, ela também pode ser usada para fornecer valores de fallback.
 
-exibir condicionalmente atributos HTML, pois HTL remove atributos com valores definidos por expressões que avaliam como falso ou como uma sequência vazia. Assim, o exemplo abaixo exibirá **`properties.jcr:`**title se ele existir e não estiver vazio, caso contrário, ele retornará para a exibição **`properties.jcr:description`** se existir e não estiver vazio, caso contrário, exibirá a mensagem "nenhum título ou descrição fornecido":
+exibir condicionalmente atributos HTML, pois HTL remove atributos com valores definidos por expressões que avaliam como falso ou como uma sequência vazia. Assim, o exemplo abaixo exibirá o **`properties.jcr:`** título se ele existir e não estiver vazio, caso contrário, ele voltará para a exibição **`properties.jcr:description`** se existir e não estiver vazio, caso contrário, exibirá a mensagem "nenhum título ou descrição fornecido":
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -409,7 +411,7 @@ A proteção de Escaping e XSS também pode ser desativada:
 | uri | Para exibir links e caminhos Padrão para valores de atributos href e src | Valida o URI para gravar como um valor de atributo href ou src, não resulta em nada se a validação falhar. |
 | número | Para exibir números | Valida o URI para conter um número inteiro, resulta em zero se a validação falhar. |
 | attributeName | Padrão para atributo de estilo de dados ao definir nomes de atributo | Valida o nome do atributo e não gera nada se a validação falhar. |
-|  elementName | Padrão para o elemento de estilo de dados | Valida o nome do elemento e não gera nada se a validação falhar. |
+| elementName | Padrão para o elemento de estilo de dados | Valida o nome do elemento e não gera nada se a validação falhar. |
 | scriptToken | Para identificadores JS, números literais ou strings literais | Valida o token JavaScript e não gera nada se a validação falhar. |
 | scriptString | Em strings JS | Codifica caracteres que se dividiriam na string. |
 | scriptComment | Em comentários JS | Valida o comentário do JavaScript, não resulta em nada se a validação falhar. |
