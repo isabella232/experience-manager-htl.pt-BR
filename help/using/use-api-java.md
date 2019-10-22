@@ -1,6 +1,6 @@
 ---
-title: API de uso do Java HTL
-seo-title: API de uso do Java HTL
+title: API de uso do Java do HTL
+seo-title: API de uso do Java do HTL
 description: 'Linguagem de modelo HTML - HTL - A API de uso de Java habilita um arquivo de HTL para acessar métodos de ajuda em uma classe de Java personalizada. '
 seo-description: 'Linguagem de modelo HTML - HTL - A API de uso de Java habilita um arquivo de HTL para acessar métodos de ajuda em uma classe de Java personalizada. '
 uuid: b340f8f7-a193-45c8-aa39-5c6e2c0194ea
@@ -11,12 +11,12 @@ content-type: referência
 discoiquuid: 126ebc9d-5f7b-47a4-aea2-c8840d34864c
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 48f09cfbdc5ef0bc5b951de1444ce40ea53dc07f
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
 
-# API de uso do Java HTL{#htl-java-use-api}
+# API de uso do Java do HTL{#htl-java-use-api}
 
 A HTML Template Language (HTL) Java Use-API permite que um arquivo HTL acesse métodos auxiliares em uma classe Java personalizada. Isso permite que toda a lógica comercial complexa seja encapsulada no código Java, enquanto o código HTL trata somente da produção de marcação direta.
 
@@ -45,7 +45,7 @@ Também adicionamos algum conteúdo para este componente para renderizar em **`/
 }
 ```
 
-Quando esse conteúdo é acessado, o arquivo HTL é executado. No código HTL, usamos o objeto de contexto **`properties`**para acessar o recurso atual `title` e exibi-lo `description` . O HTML de saída será:
+Quando esse conteúdo é acessado, o arquivo HTL é executado. No código HTL, usamos o objeto de contexto **`properties`** para acessar os recursos atuais `title` e exibi-los `description` . O HTML de saída será:
 
 ### `view-source:http://localhost:4502/content/my-example.html` {#view-source-http-localhost-content-my-example-html}
 
@@ -198,8 +198,8 @@ Como alternativa, os objetos de contexto usados normalmente podem ser acessados 
 |  |  |
 |---|---|
 | [PageManager](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/PageManager.html) | [getPageManager()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageManager()) |
-| [Modos](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getCurrentPage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentPage()) |
-| [Modos](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getResourcePage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourcePage()) |
+| [Página](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getCurrentPage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentPage()) |
+| [Página](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getResourcePage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourcePage()) |
 | [ValueMap](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getPageProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageProperties()) |
 | [ValueMap](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getProperties()) |
 | [Designer](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Designer.html) | [getDesigner()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getDesigner()) |
@@ -361,7 +361,7 @@ A string é então revertida e exposta pelo método
 
 **`getReverseText()`**
 
-### Enviar apenas parâmetros a partir de modelo de dados {#only-pass-parameters-from-data-sly-template}
+### Enviar apenas parâmetros do modelo de dados {#only-pass-parameters-from-data-sly-template}
 
 Embora o exemplo acima esteja tecnicamente correto, não faz muito sentido passar um valor de HTL para inicializar uma classe use, quando o valor em questão está disponível no contexto de execução do código HTL (ou, trivialmente, o valor é estático, como acima).
 
