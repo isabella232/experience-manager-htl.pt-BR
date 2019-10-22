@@ -4,12 +4,12 @@ seo-title: Introdução ao HTL
 description: O HTL suportado pelo AEM substitui o JSP como o sistema de modelo preferencial e recomendado do lado do servidor para HTML no AEM.
 seo-description: O HTML Template Language - HTL - suportado pelo Adobe Experience Manager substitui o JSP como o sistema de modelo preferencial e recomendado do lado do servidor para HTML no AEM.
 uuid: 4a7d6748-8cdf-4280-a85d-6c5319abf487
-content-type: referência
-topic-tags: introdução
+content-type: reference
+topic-tags: introduction
 discoiquuid: 3bf2ca75-0d68-489d-bd1c-1d4fd730c61a
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 1e3df6159b48da27460f3ad95c22c13d025b1a72
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
@@ -42,21 +42,20 @@ Mesmo dentro do mesmo componente, os arquivos HTL podem ser usados junto com JSP
 Antes de começar a usar a Linguagem de modelo HTML, comecemos com respostas antecipadas a algumas perguntas relacionadas ao tópico JSP vs HTL.
 
 **O HTL tem alguma limitação que o JSP não tem?**
-Na verdade, HTL não tem limitações em relação ao JSP, no sentido de que o que pode ser feito com o JSP também deve ser alcançável com o HTL. No entanto, o HTL é mais estrito do que o JSP em vários aspectos, e o que pode ser alcançado em um único arquivo JSP pode precisar ser separado em uma classe Java ou em um arquivo JavaScript para ser alcançável em HTL. But this is generally desired to ensure a good separation of concerns between the logic and the markup.
+Na verdade, HTL não tem limitações em relação ao JSP, no sentido de que o que pode ser feito com o JSP também deve ser alcançável com o HTL. No entanto, o HTL é mais estrito do que o JSP em vários aspectos, e o que pode ser alcançado em um único arquivo JSP pode precisar ser separado em uma classe Java ou em um arquivo JavaScript para ser alcançável em HTL. Mas isso é geralmente desejado para garantir uma boa separação de preocupações entre a lógica e a marcação.
 
 **O HTL suporta as bibliotecas de tags JSP?**
 Não, mas conforme mostrado na seção [Carregando bibliotecas](getting-started.md#loading-client-libraries) de clientes, as instruções [template e call](block-statements.md#template-call) oferecem um padrão semelhante.
 
-**Can the HTL features be extended on an AEM project?**
-**No, but as shown in the Loading Client Libraries section, the template &amp; call statements offer a similar pattern.
-[](getting-started.md#loading-client-libraries)[](block-statements.md#template-call)
-No, they cannot. HTL has powerful extension mechanisms for reuse of logic - the Use-API - and of markup (the template &amp; call statements), which can be used to modularize the code of projects.[](getting-started.md#use-api-for-accessing-logic)[](block-statements.md#template-call)
+**Os recursos HTL podem ser estendidos em um projeto do AEM?**
+Não, mas conforme mostrado na seção [Carregando bibliotecas](getting-started.md#loading-client-libraries) de clientes, as instruções [template e call](block-statements.md#template-call) oferecem um padrão semelhante.
+Não, não podem. O HTL tem poderosos mecanismos de extensão para reutilizar a lógica - a [Use-API](getting-started.md#use-api-for-accessing-logic) - e de marcação (as declarações de [modelo e chamada](block-statements.md#template-call) ), que podem ser usadas para modular o código de projetos.
 
-**What are the main benefits of HTL over JSP?**
-Security and project efficiency are the main benefits, which are detailed on the Overview.[](overview.md)
+**Quais são os principais benefícios do HTL em relação ao JSP?**
+Segurança e eficiência do projeto são os principais benefícios, detalhados na [Visão geral](overview.md).
 
 **O JSP eventualmente vai embora?**
-At the current date, there are no plans along these lines.
+Na data atual, não existem planos nesse sentido.
 
 ## Conceitos fundamentais do HTL {#fundamental-concepts-of-htl}
 
