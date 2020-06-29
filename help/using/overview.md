@@ -1,18 +1,11 @@
 ---
 title: Visão geral do AEM HTL
-seo-title: Visão geral da documentação técnica do AEM HTL.
 description: A finalidade do HTL compatível com o AEM é oferecer uma estrutura corporativa da Web altamente produtiva que aumenta a segurança e permite que desenvolvedores de HTML sem conhecimento em Java tenham uma melhor participação nos projetos AEM.
-seo-description: Este documento apresenta os princípios e a finalidade da Linguagem de modelo HTML - HTL - compatível com o Adobe Experience Manager. HTL é uma estrutura corporativa da Web altamente produtiva que aumenta a segurança e permite que desenvolvedores de HTML sem conhecimento em Java tenham uma melhor participação nos projetos AEM.
-uuid: 8f486325-0a1b-4186-a998-96fc0034c44a
-contentOwner: Usuário
-products: SG_EXPERIENCEMANAGER/HTL
-topic-tags: introdução
-content-type: referência
-discoiquuid: 8f779e08-94c7-43bc-a6e5-d81a9f818c5c
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-skyline: teste da replicação
-translation-type: ht
-source-git-commit: 0aa1e905fd6d24f7031dceb0a8a89b56da198719
+translation-type: tm+mt
+source-git-commit: d3426d87dce09ac34ff1aca431ff2bfad2f7134a
+workflow-type: tm+mt
+source-wordcount: '662'
+ht-degree: 95%
 
 ---
 
@@ -41,7 +34,7 @@ Para projetos AEM, maior segurança, desenvolvimento simplificado e melhor colab
 
 Especificamente, a partir do que foi observado ao reimplementar o site Adobe.com com a Linguagem de modelo HTML, o custo e a duração do projeto podem ser reduzidos em cerca de 25%.
 
-![](assets/chlimage_1.png)
+![Aumento da eficácia e redução dos custos](assets/chlimage_1.png)
 
 O diagrama acima mostra que possivelmente as seguintes melhorias na eficiência foram viabilizadas pelo HTL:
 
@@ -52,4 +45,3 @@ O diagrama acima mostra que possivelmente as seguintes melhorias na eficiência 
 **Leia a seguir:**
 
 * [Introdução à Linguagem de modelo HTML](getting-started.md)
-
