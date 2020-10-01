@@ -1,10 +1,10 @@
 ---
 title: Introdução ao HTL
-description: O HTL suportado pelo AEM substitui o JSP como o sistema de modelo preferencial e recomendado do lado do servidor para HTML no AEM.
+description: O HTL suportado pelo AEM toma o lugar do JSP como o sistema de modelo preferencial e recomendado para o servidor para HTML no AEM.
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '2490'
+source-wordcount: '2471'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Introdução ao HTL {#getting-started-with-htl}
 
-O HTML Template Language (HTL) suportado pelo Adobe Experience Manager (AEM) é o sistema de modelo preferencial e recomendado do lado do servidor para HTML no AEM. Ele ocupa o lugar do JSP (JavaServer Pages), conforme usado em versões anteriores do AEM.
+O HTML Template Language (HTL) suportado pela Adobe Experience Manager (AEM) é o sistema de modelo preferencial e recomendado do lado do servidor para HTML no AEM. Ele ocupa o lugar do JSP (JavaServer Pages), como usado em versões anteriores do AEM.
 
 >[!NOTE]
 >
@@ -20,7 +20,7 @@ O HTML Template Language (HTL) suportado pelo Adobe Experience Manager (AEM) é 
 
 ## HTL sobre JSP {#htl-over-jsp}
 
-Recomenda-se que os novos projetos do AEM usem a Linguagem de modelo HTML, já que oferta vários benefícios em relação ao JSP. No entanto, no caso dos projetos existentes, a migração só faz sentido se se estimar que seja menos esforço do que manter os JSP existentes para os próximos anos.
+Recomenda-se que os novos projetos AEM usem a Linguagem de modelo HTML, já que oferta vários benefícios em relação ao JSP. No entanto, no caso dos projetos existentes, a migração só faz sentido se se estimar que seja menos esforço do que manter os JSP existentes para os próximos anos.
 
 Mas mudar para HTL não é necessariamente uma opção de tudo ou nada, porque os componentes escritos em HTL são compatíveis com componentes escritos em JSP ou ESP. Isso significa que os projetos existentes podem, sem problemas, usar o HTL para novos componentes, mantendo o JSP para os componentes existentes.
 
@@ -39,7 +39,7 @@ Antes de começar a usar a Linguagem de modelo HTML, vamos nos start de responde
 
 **O HTL suporta as bibliotecas de tags JSP?** - Não, mas como mostrado na seção [Carregando bibliotecas](getting-started.md#loading-client-libraries) clientes, as instruções [template &amp; call](block-statements.md#template-call) ofertas um padrão semelhante.
 
-**Os recursos HTL podem ser estendidos em um projeto do AEM?** Não, não podem. O HTL tem poderosos mecanismos de extensão para reutilizar a lógica - a [Use-API](getting-started.md#use-api-for-accessing-logic) - e de marcação (as declarações de [modelo e chamada](block-statements.md#template-call) ), que podem ser usadas para modular o código de projetos.
+**Os recursos HTL podem ser estendidos em um projeto AEM?** Não, não podem. O HTL tem poderosos mecanismos de extensão para reutilizar a lógica - a [Use-API](getting-started.md#use-api-for-accessing-logic) - e de marcação (as declarações de [modelo e chamada](block-statements.md#template-call) ), que podem ser usadas para modular o código de projetos.
 
 **Quais são os principais benefícios do HTL em relação ao JSP?** - A segurança e a eficiência dos projetos são os principais benefícios, que estão detalhados na [visão geral](overview.md).
 
@@ -61,9 +61,9 @@ Este é um primeiro exemplo, que pode ser contido como está em um **`template.h
 
 Podem distinguir-se dois tipos diferentes de sintaxes:
 
-* **[Instruções](block-statements.md)**em bloco - para exibir condicionalmente o elemento **&lt;h1>**, um atributo de dados[`data-sly-test`](block-statements.md#test)HTML5 é usado. HTL fornece vários atributos desse tipo, que permitem anexar o comportamento a qualquer elemento HTML, e todos recebem o prefixo`data-sly`.
+* **[Instruções](block-statements.md)** em bloco - para exibir condicionalmente o elemento **&lt;h1>** , um atributo de dados [`data-sly-test`](block-statements.md#test) HTML5 é usado. HTL fornece vários atributos desse tipo, que permitem anexar o comportamento a qualquer elemento HTML, e todos recebem o prefixo `data-sly`.
 
-* **[Idioma](expression-language.md)**da Expressão - as expressões HTL são delimitadas por caracteres`${`e`}`. No tempo de execução, essas expressões são avaliadas e seu valor é inserido no fluxo HTML de saída.
+* **[Idioma](expression-language.md)** da expressão - as expressões HTL são delimitadas por caracteres `${` e `}`. No tempo de execução, essas expressões são avaliadas e seu valor é inserido no fluxo HTML de saída.
 
 As duas páginas vinculadas acima fornecem a lista detalhada dos recursos disponíveis para sintaxe.
 
@@ -111,12 +111,6 @@ e o elemento DIV poderia ter sido anotado com a condição:
 </div>
 ```
 
->[!NOTE]
->
->O elemento SLY foi introduzido com o AEM 6.1 ou HTL 1.1.
->
->Antes disso, era necessário utilizar o [`data-sly-unwrap`](block-statements.md) atributo.
-
 ### Comentários HTL {#htl-comments}
 
 O exemplo a seguir mostra na **linha 1** um comentário HTL e na **linha 2** um comentário HTML:
@@ -138,7 +132,7 @@ Para poder usar o HTL da melhor maneira, é importante entender bem as consequê
 
 ### Nomes de elementos e atributos {#element-and-attribute-names}
 
-As Expressões só podem ser colocadas em texto HTML ou valores de atributo, mas não em nomes de elementos ou nomes de atributos, ou não seriam mais HTML válido. Para definir nomes de elementos dinamicamente, a [`data-sly-element`](block-statements.md#element) instrução pode ser usada nos elementos desejados e para definir dinamicamente nomes de atributos, mesmo configurando vários atributos ao mesmo tempo, a [`data-sly-attribute`](block-statements.md#attribute) instrução pode ser usada.
+As expressões só podem ser colocadas em texto HTML ou valores de atributo, mas não em nomes de elementos ou nomes de atributos, ou não seriam mais HTML válido. Para definir nomes de elementos dinamicamente, a [`data-sly-element`](block-statements.md#element) instrução pode ser usada nos elementos desejados e para definir dinamicamente nomes de atributos, mesmo configurando vários atributos ao mesmo tempo, a [`data-sly-attribute`](block-statements.md#attribute) instrução pode ser usada.
 
 ```xml
 <h1 data-sly-element="${myElementName}" data-sly-attribute="${myAttributeMap}">...</h1>
@@ -199,7 +193,7 @@ Consulte a seção [Trabalhando com modelos](getting-started.md#working-with-cli
 >
 >Essa técnica pode introduzir vulnerabilidades de script entre sites (XSS), e os aspectos de segurança devem ser cuidadosamente estudados se isso for usado. Geralmente, há melhores maneiras de implementar a mesma coisa do que contar com essa prática.
 
-## Capacidades gerais de HTL {#general-capabilities-of-htl}
+## Recursos gerais do HTL {#general-capabilities-of-htl}
 
 Esta seção aborda rapidamente os recursos gerais da Linguagem de modelo HTML.
 
@@ -311,7 +305,7 @@ Esta seção apresenta alguns cenários comuns e como resolvê-los melhor com a 
 
 ### Carregando bibliotecas de clientes {#loading-client-libraries}
 
-Em HTL, as bibliotecas do cliente são carregadas por meio de um modelo auxiliar fornecido pelo AEM, que pode ser acessado por meio [`data-sly-use`](block-statements.md#use). Três modelos estão disponíveis neste arquivo, que pode ser chamado por meio de [`data-sly-call`](block-statements.md#template-call):
+Em HTL, as bibliotecas do cliente são carregadas por meio de um modelo auxiliar fornecido pela AEM, que pode ser acessado por meio [`data-sly-use`](block-statements.md#use). Três modelos estão disponíveis neste arquivo, que pode ser chamado por meio de [`data-sly-call`](block-statements.md#template-call):
 
 * **`css`** - Carrega somente os arquivos CSS das bibliotecas de clientes referenciadas.
 * **`js`** - Carrega somente os arquivos JavaScript das bibliotecas de clientes referenciadas.
@@ -407,5 +401,5 @@ No entanto, uma técnica mais moderna seria usar o **`template`** elemento HTML,
 
 **Leia a seguir:**
 
-* [Idioma](expression-language.md) da Expressão - para saber em detalhes o que isso pode ser feito dentro das expressões HTL.
+* [Idioma](expression-language.md) da expressão - para saber em detalhes o que isso pode ser feito dentro das expressões HTL.
 * [Bloquear declarações](block-statements.md) - para descobrir todas as declarações em bloco disponíveis em HTL e como usá-las.
