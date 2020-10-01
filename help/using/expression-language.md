@@ -2,9 +2,9 @@
 title: Linguagem de expressão do HTL
 description: A Linguagem de modelo HTML usa uma linguagem de expressão para acessar as estruturas de dados que fornecem os elementos dinâmicos da saída HTML.
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '1848'
+source-wordcount: '1854'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ A Linguagem de modelo HTML usa uma linguagem de expressão para acessar as estru
 </h1>
 ```
 
-As Expressões podem ser evitadas com o prefixo de um `\` caractere, por exemplo, `\${test}` serão renderizadas `${test}`.
+As expressões podem ser evitadas com o prefixo de um `\` caractere, por exemplo, `\${test}` serão renderizadas `${test}`.
 
 >[!NOTE]
 >
@@ -54,7 +54,7 @@ Também mostrado no exemplo acima é que funções do Java getter, como `getTitl
 
 Os nomes de variáveis, chamados de identificadores, estão em conformidade com determinadas regras. Eles devem start com uma letra (`A`-`Z` e `a`-`z`) ou um sublinhado (`_`), e os caracteres subsequentes também podem ser dígitos (`0`-`9`) ou dois pontos (`:`). Letras Unicode como `å` e `ü` não podem ser usadas em identificadores.
 
-Dado que o caractere de dois pontos (`:`) é comum nos nomes de propriedades do AEM, é necessário enfatizar que ele é um caractere identificador válido:
+Dado que o caractere de dois pontos (`:`) é comum em nomes de propriedades AEM, é necessário enfatizar que ele é um caractere identificador válido:
 
 `${properties.jcr:title}`
 
@@ -151,7 +151,7 @@ As matrizes são úteis para fornecer uma lista de valores do modelo.
 
 Normalmente, esses operadores são usados com valores booleanos, no entanto, como no JavaScript, eles retornam o valor de um dos operandos especificados, de modo que, quando usados com valores não booleanos, podem retornar um valor não booliano.
 
-Se um valor puder ser convertido em `true`, ele será chamado de verdadeiro. Se um valor puder ser convertido em `false`, ele será chamado de falso. Os valores que podem ser convertidos em variáveis não definidas, valores nulos, o número zero e sequências vazias. `false`
+Se um valor puder ser convertido em `true`, ele será chamado de verdadeiro. Se um valor puder ser convertido em `false`, ele será chamado de falso. Valores que podem ser convertidos em variáveis não definidas, valores nulos, o número zero e sequências vazias. `false`
 
 #### NÃO lógico {#logical-not}
 
@@ -194,7 +194,7 @@ Esse operador pode ser usado para testar se uma das duas condições se aplicam,
 
 Como o operador OR lógico retorna a primeira variável verdadeira, ela também pode ser usada para fornecer valores de fallback.
 
-exibir condicionalmente atributos HTML, pois HTL remove atributos com valores definidos por expressões que avaliam como falso ou como uma sequência vazia. Assim, o exemplo abaixo exibirá o **`properties.jcr:`** título se ele existir e não estiver vazio, caso contrário, ele voltará para a exibição **`properties.jcr:description`** se existir e não estiver vazio, caso contrário, exibirá a mensagem &quot;nenhum título ou descrição fornecido&quot;:
+Também pode ser usado para exibir condicionalmente atributos HTML, pois HTL remove atributos com valores definidos por expressões que avaliam como falso ou como uma sequência vazia. Assim, o exemplo abaixo exibirá o **`properties.jcr:`** título se ele existir e não estiver vazio, caso contrário, ele voltará para a exibição **`properties.jcr:description`** se existir e não estiver vazio, caso contrário, exibirá a mensagem &quot;nenhum título ou descrição fornecido&quot;:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -249,7 +249,7 @@ O operador de agrupamento `()` controla a precedência da avaliação no express
 
 ## Opções {#options}
 
-As opções de Expressão podem atuar na expressão e modificá-la, ou servir como parâmetros quando usadas em conjunto com instruções de bloqueio.
+As opções de expressão podem atuar na expressão e modificá-la, ou servir como parâmetros quando usadas em conjunto com instruções de bloqueio.
 
 Tudo depois da `@` opção é uma opção:
 
@@ -272,7 +272,7 @@ Várias opções são separadas por vírgulas:
 ${myVar @ optOne, optTwo=bar}
 ```
 
-expressões paramétricas contendo apenas opções também são possíveis:
+Expressões paramétricas contendo apenas opções também são possíveis:
 
 ```xml
 ${@ optOne, optTwo=bar}
@@ -335,7 +335,7 @@ Os exemplos a seguir mostram que o formato é especificado primeiro e o valor qu
 >
 >Para obter detalhes completos sobre o formato que você pode usar, consulte a especificação [](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md)HTL.
 
-### Internacionalização {#internationalization}
+### internacionalização {#internationalization}
 
 Traduz a string para o idioma da *fonte* atual (veja abaixo), usando o [dicionário](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/internationalization/i18n-translator.html)atual. Se nenhuma tradução for encontrada, a string original será usada.
 
