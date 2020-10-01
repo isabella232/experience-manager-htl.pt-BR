@@ -2,10 +2,10 @@
 title: Visão geral do AEM HTL
 description: A finalidade do HTL compatível com o AEM é oferecer uma estrutura corporativa da Web altamente produtiva que aumenta a segurança e permite que desenvolvedores de HTML sem conhecimento em Java tenham uma melhor participação nos projetos AEM.
 translation-type: tm+mt
-source-git-commit: d3426d87dce09ac34ff1aca431ff2bfad2f7134a
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '662'
-ht-degree: 95%
+source-wordcount: '665'
+ht-degree: 94%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 95%
 
 A finalidade da Linguagem de modelo HTML (HTL) compatível com o Adobe Experience Manager (AEM) é oferecer uma estrutura corporativa da Web altamente produtiva que aumenta a segurança e permite que desenvolvedores de HTML sem conhecimento em Java tenham uma melhor participação nos projetos AEM.
 
-A Linguagem de modelo HTML foi introduzida com o AEM 6.0 e substitui o JSP (JavaServer Pages) como o sistema de modelo preferencial e recomendado do lado do servidor para HTML. Para desenvolvedores da Web que precisam criar sites corporativos robustos, a Linguagem de modelo HTML ajuda a aumentar a segurança e a eficiência do desenvolvimento.
+O Linguagem de modelo HTML é o sistema de modelo preferencial e recomendado para o lado do servidor para HTML no AEM. O HTL foi introduzido com o AEM 6.0 e substitui o JSP (JavaServer Pages). Para desenvolvedores da Web que precisam criar sites corporativos robustos, a Linguagem de modelo HTML ajuda a aumentar a segurança e a eficiência do desenvolvimento.
 
 ## Maior segurança {#increased-security}
 
