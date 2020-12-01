@@ -14,5 +14,5 @@ ht-degree: 3%
 
 Estes são os padrões HTL:
 
-* [A especificação](https://github.com/adobe/htl-spec) HTL - para advogados de idiomas, a sintaxe formal e a descrição do recurso.
-* [O HTL TCK](https://github.com/adobe/htl-tck) - um conjunto de testes para certificar a compatibilidade do idioma.
+* [Especificação](https://github.com/adobe/htl-spec)  HTL - para advogados de idiomas, a sintaxe formal e a descrição do recurso.
+* [O HTL TCK](https://github.com/adobe/htl-tck)  - um conjunto de testes para certificar a compatibilidade do idioma.
