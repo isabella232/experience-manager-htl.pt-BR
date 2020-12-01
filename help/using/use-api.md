@@ -21,6 +21,6 @@ A tabela a seguir apresenta uma visão geral das vantagens e desvantagens de cad
 | **Vantagens** | <ul><li>Mais rápido</li><li>Pode ser inspecionado com um depurador</li><li>Teste fácil de unidade</li></ul> | <ul><li>Pode ser modificado por desenvolvedores front-end</li><li>Está localizado dentro do componente, mantendo a lógica de visualização de um componente próxima ao modelo correspondente</li></ul> |
 | **Desvantagens** | <ul><li>Não pode ser modificado por desenvolvedores front-end</li></ul> | <ul><li>Mais lento</li><li>Nenhum depurador (ainda)</li><li>Teste de unidade mais difícil</li></ul> |
 
-Para componentes de página, é recomendável usar um modelo misto, em que toda a lógica do modelo está localizada em Java, fornecendo APIs claras agnósticas para qualquer coisa que acontece na visualização (ou seja, dentro dos componentes). O AEM vem com excelentes modelos padrão, como a Página ou a API de recursos, que devem ser capazes de abranger a maioria dos casos.
+Para componentes de página, é recomendável usar um modelo misto, em que toda a lógica do modelo está localizada em Java, fornecendo APIs claras agnósticas para qualquer coisa que acontece na visualização (ou seja, dentro dos componentes). AEM vem com grandes modelos padrão, como a Página ou a API de recursos, que devem ser capazes de abranger a maioria dos casos.
 
 Toda lógica de visualização específica para um componente deve ser colocada dentro desse componente como JavaScript, pois pertence a esse componente.
