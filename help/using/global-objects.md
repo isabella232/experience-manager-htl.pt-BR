@@ -5,14 +5,14 @@ translation-type: tm+mt
 source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
 workflow-type: tm+mt
 source-wordcount: '220'
-ht-degree: 3%
+ht-degree: 5%
 
 ---
 
 
 # Objetos globais do HTL {#htl-global-objects}
 
-Sem precisar especificar nada, o HTL fornece acesso a todos os objetos que normalmente estavam disponíveis no JSP após a inclusão `global.jsp`. Esses objetos são adicionados a qualquer que possa ser introduzido por meio da [Use-API](use-api.md).
+Sem precisar especificar nada, o HTL fornece acesso a todos os objetos que normalmente estavam disponíveis no JSP após a inclusão de `global.jsp`. Esses objetos são adicionados a qualquer objeto que possa ser introduzido por meio da [Use-API](use-api.md).
 
 ## Objetos enumeráveis {#enumerable-objects}
 
@@ -20,9 +20,9 @@ Esses objetos fornecem acesso conveniente a informações comumente usadas. O co
 
 | Nome da variável | Descrição |
 |--- |--- |
-| `properties` | Lista das propriedades do Recurso atual. Apoiado por [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `pageProperties` | Lista das propriedades da página da página atual. Apoiado por [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `inheritedPageProperties` | Lista das propriedades herdadas da página atual. Apoiado por [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `properties` | Lista das propriedades do Recurso atual. Compatível com [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `pageProperties` | Lista das propriedades da página da página atual. Compatível com [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `inheritedPageProperties` | Lista das propriedades herdadas da página atual. Compatível com [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 
 ## Objetos com suporte Java {#java-backed-objects}
 
@@ -58,7 +58,7 @@ As variáveis mais úteis na tabela abaixo são destacadas em negrito.
 
 ## Objetos com suporte do JavaScript {#javascript-backed-objects}
 
-É possível fazer backup da lógica HTL com JavaScript. No entanto, o método preferencial ou recomendado é o uso de Modelos [Sling.](https://sling.apache.org/documentation/bundles/models.html)
+É possível fazer backup da lógica HTL com JavaScript. No entanto, o método preferencial ou recomendado é usando [Modelos Sling.](https://sling.apache.org/documentation/bundles/models.html)
 
 <!-- 
 
