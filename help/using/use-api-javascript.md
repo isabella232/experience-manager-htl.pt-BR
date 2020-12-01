@@ -45,7 +45,7 @@ Definimos um componente, `info`, localizado em
 Ele contém dois arquivos:
 
 * **`info.js`**: um arquivo JavaScript que define a classe de uso.
-* **`info.html`**: um arquivo HTL que define o componente `info`. Esse código usará a funcionalidade do por meio `info.js` da API de uso.
+* **`info.html`**: um arquivo HTL que define o componente  `info`. Esse código usará a funcionalidade de `info.js` por meio da API de uso.
 
 ### /apps/my-example/component/info/info.js {#apps-my-example-component-info-info-js}
 
@@ -68,7 +68,7 @@ use(function () {
 </div>
 ```
 
-Também criamos um nó de conteúdo que usa o `info` componente em
+Também criamos um nó de conteúdo que usa o componente `info` em
 
 `/content/my-example`, com propriedades:
 
@@ -115,7 +115,7 @@ Considere o seguinte modelo de componente:
 </section>
 ```
 
-A lógica correspondente pode ser gravada usando o seguinte JavaScript do lado do servidor, localizado em um `component.js` arquivo ao lado do modelo:
+A lógica correspondente pode ser gravada usando o seguinte JavaScript do lado do servidor, localizado em um arquivo `component.js` ao lado do modelo:
 
 ```javascript
 use(function () {
@@ -134,7 +134,7 @@ use(function () {
 });
 ```
 
-Isso tenta extrair a descrição `title` de fontes diferentes e corta a descrição para 50 caracteres.
+Isso tenta obter o `title` de fontes diferentes e corta a descrição para 50 caracteres.
 
 ## Dependências {#dependencies}
 
@@ -159,9 +159,9 @@ use(['../utils/MyUtils.js'], function (utils) {
 
 ## Extensão {#extending}
 
-O padrão de dependência também pode ser usado para estender a lógica de outro componente (que normalmente é o `sling:resourceSuperType` do componente atual).
+O padrão de dependência também pode ser usado para estender a lógica de outro componente (que normalmente é `sling:resourceSuperType` do componente atual).
 
-Imagine que o componente pai já fornece o `title`, e nós também queremos adicionar um `description` :
+Imagine que o componente pai já fornece o `title`, e nós também queremos adicionar um `description`:
 
 ```javascript
 use(['../parent-component/parent-component.js'], function (component) {
@@ -178,7 +178,7 @@ use(['../parent-component/parent-component.js'], function (component) {
 
 ## Passando parâmetros para um modelo {#passing-parameters-to-a-template}
 
-No caso de `data-sly-template` declarações que podem ser independentes dos componentes, pode ser útil passar parâmetros para a Use-API associada.
+No caso de instruções `data-sly-template` que podem ser independentes dos componentes, pode ser útil passar parâmetros para a Use-API associada.
 
 Então, em nosso componente vamos chamar um modelo que está localizado em um arquivo diferente:
 
@@ -186,7 +186,7 @@ Então, em nosso componente vamos chamar um modelo que está localizado em um ar
 <section class="component-name" data-sly-use.tmpl="template.html" data-sly-call="${tmpl.templateName @ page=currentPage}"></section>
 ```
 
-Esse é o modelo localizado em `template.html`:
+Em seguida, este é o modelo localizado em `template.html`:
 
 ```xml
 <template data-sly-template.templateName="${@ page}" data-sly-use.tmpl="${'template.js' @ page=page, descriptionLength=50}">
@@ -195,7 +195,7 @@ Esse é o modelo localizado em `template.html`:
 </template>
 ```
 
-A lógica correspondente pode ser gravada usando o seguinte JavaScript do lado do servidor, localizado em um `template.js` arquivo ao lado do arquivo de modelo:
+A lógica correspondente pode ser gravada usando o seguinte JavaScript do lado do servidor, localizado em um arquivo `template.js` ao lado do arquivo de modelo:
 
 ```javascript
 use(function () {
@@ -213,4 +213,4 @@ use(function () {
 });
 ```
 
-Os parâmetros passados são definidos na `this` palavra-chave.
+Os parâmetros transmitidos são definidos na palavra-chave `this`.
