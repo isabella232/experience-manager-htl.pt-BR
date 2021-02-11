@@ -2,7 +2,7 @@
 title: O que é HTL
 description: 'Linguagem de modelo HTML - HTL - é o sistema de modelo preferencial e recomendado do Adobe Experience Manager para HTML. '
 translation-type: tm+mt
-source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 12%
