@@ -2,7 +2,7 @@
 title: Linguagem de expressão do HTL
 description: A Linguagem de modelo HTML usa uma linguagem de expressão para acessar as estruturas de dados que fornecem os elementos dinâmicos da saída HTML.
 translation-type: tm+mt
-source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '1854'
 ht-degree: 1%
