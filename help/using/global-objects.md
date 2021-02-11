@@ -2,7 +2,7 @@
 title: Objetos globais do HTL
 description: Sem precisar especificar nada, o HTL fornece acesso a todos os objetos que normalmente estavam disponíveis no JSP após a inclusão do global.jsp.
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '220'
 ht-degree: 5%
