@@ -1,6 +1,6 @@
 ---
 solution: Experience Manager
-type: Documentação
+type: Documentation
 product: adobe experience manager
 git-repo: https://git.corp.adobe.com/AdobeDocs/experience-manager-htl.pt-BR
 index: y
