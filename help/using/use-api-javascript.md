@@ -1,20 +1,19 @@
 ---
 title: API de uso do JavaScript do HTL
-description: A Linguagem do modelo HTML - HTL - API de uso do JavaScript permite que um arquivo HTL acesse o código auxiliar escrito em JavaScript.
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
-workflow-type: tm+mt
+description: A API de uso de JavaScript da Linguagem de modelo HTML (HTL) possibilita que um arquivo HTL acesse o código de ajuda gravado em JavaScript.
+exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
+workflow-type: ht
 source-wordcount: '324'
-ht-degree: 2%
+ht-degree: 100%
 
 ---
 
-
 # API de uso do JavaScript do HTL {#htl-javascript-use-api}
 
-A HTML Template Language (HTL) JavaScript Use-API permite que um arquivo HTL acesse o código auxiliar escrito em JavaScript. Isso permite que toda a lógica comercial complexa seja encapsulada no código JavaScript, enquanto o código HTL trata somente da produção de marcação direta.
+A API de uso do JavaScript da Linguagem de modelo HTML (HTL) possibilita que um arquivo HTL acesse o código de ajuda gravado em JavaScript. Isso permite que toda lógica de negócios complexa seja encapsulada no código JavaScript, enquanto o código HTL lida somente com a produção de marcação direta.
 
-As seguintes convenções são usadas.
+As seguintes convenções são usadas:
 
 ```javascript
 /**
@@ -42,10 +41,10 @@ Definimos um componente, `info`, localizado em
 
 `/apps/my-example/components/info`
 
-Ele contém dois arquivos:
+Ele contém dois arquivos
 
 * **`info.js`**: um arquivo JavaScript que define a classe de uso.
-* **`info.html`**: um arquivo HTL que define o componente  `info`. Esse código usará a funcionalidade de `info.js` por meio da API de uso.
+* **`info.html`**: um arquivo HTL que define o componente `info`. Esse código usará a funcionalidade de `info.js` por meio da API de uso.
 
 ### /apps/my-example/component/info/info.js {#apps-my-example-component-info-info-js}
 
@@ -115,7 +114,7 @@ Considere o seguinte modelo de componente:
 </section>
 ```
 
-A lógica correspondente pode ser gravada usando o seguinte JavaScript do lado do servidor, localizado em um arquivo `component.js` ao lado do modelo:
+A lógica correspondente pode ser gravada usando o seguinte JavaScript do lado do servidor, localizado em um arquivo `component.js`, ao lado do modelo:
 
 ```javascript
 use(function () {
@@ -134,11 +133,11 @@ use(function () {
 });
 ```
 
-Isso tenta obter o `title` de fontes diferentes e corta a descrição para 50 caracteres.
+Isso tenta pegar o `title` de diferentes fontes e recortar a descrição para 50 caracteres.
 
 ## Dependências {#dependencies}
 
-Vamos imaginar que nós tenhamos uma classe de utilidade que já está equipada com recursos inteligentes, como a lógica padrão para o título de navegação ou recortar uma sequência de caracteres com um certo comprimento:
+Imagine que temos uma classe de utilitários já equipada com recursos inteligentes, como a lógica padrão do título de navegação ou recortar gentilmente uma cadeia de caracteres com um determinado comprimento:
 
 ```javascript
 use(['../utils/MyUtils.js'], function (utils) {
@@ -159,9 +158,9 @@ use(['../utils/MyUtils.js'], function (utils) {
 
 ## Extensão {#extending}
 
-O padrão de dependência também pode ser usado para estender a lógica de outro componente (que normalmente é `sling:resourceSuperType` do componente atual).
+O padrão de dependência também pode ser usado para estender a lógica de outro componente (que normalmente é o `sling:resourceSuperType` do componente atual).
 
-Imagine que o componente pai já fornece o `title`, e nós também queremos adicionar um `description`:
+Imagine que o componente principal já forneça o `title`, e que também queiramos adicionar um `description`:
 
 ```javascript
 use(['../parent-component/parent-component.js'], function (component) {
@@ -176,11 +175,11 @@ use(['../parent-component/parent-component.js'], function (component) {
 });
 ```
 
-## Passando parâmetros para um modelo {#passing-parameters-to-a-template}
+## Passar parâmetros para um modelo {#passing-parameters-to-a-template}
 
-No caso de instruções `data-sly-template` que podem ser independentes dos componentes, pode ser útil passar parâmetros para a Use-API associada.
+No caso de instruções `data-sly-template` que possam ser independentes de componentes, pode ser útil transmitir parâmetros para a API de uso associada.
 
-Então, em nosso componente vamos chamar um modelo que está localizado em um arquivo diferente:
+Portanto, em nosso componente, vamos chamar um modelo que está localizado em um arquivo diferente:
 
 ```xml
 <section class="component-name" data-sly-use.tmpl="template.html" data-sly-call="${tmpl.templateName @ page=currentPage}"></section>
@@ -195,7 +194,7 @@ Em seguida, este é o modelo localizado em `template.html`:
 </template>
 ```
 
-A lógica correspondente pode ser gravada usando o seguinte JavaScript do lado do servidor, localizado em um arquivo `template.js` ao lado do arquivo de modelo:
+A lógica correspondente pode ser gravada usando o seguinte JavaScript do lado do servidor, localizado em um arquivo `template.js`, ao lado do arquivo de modelo:
 
 ```javascript
 use(function () {
