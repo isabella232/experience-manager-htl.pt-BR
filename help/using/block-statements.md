@@ -105,7 +105,7 @@ Inicialize outro modelo HTL, que pode ser chamado usando `data-sly-call`:
 >Para mais informações sobre a API de uso, consulte:
 >
 >* [API de uso do Java](use-api-java.md)
-* [API de uso do JavaScript](use-api-javascript.md)
+>* [API de uso do JavaScript](use-api-javascript.md)
 
 
 #### data-sly-use com recursos {#data-sly-use-with-resources}
@@ -121,7 +121,8 @@ Por exemplo:
 ```
 
 >[!TIP]
-Consulte também a seção [Caminho nem sempre necessário.](#path-not-required)
+>
+>Consulte também a seção [Caminho nem sempre necessário.](#path-not-required)
 
 ### unwrap {#unwrap}
 
@@ -460,7 +461,8 @@ cssClassName='className'}"></article>
 ```
 
 >[!NOTE]
-O AEM oferece lógica simples e clara controlando as tags de decoração que envolvem elementos incluídos. Para mais detalhes, consulte [Tag de decoração](https://docs.adobe.com/content/help/pt-BR/experience-manager-65/developing/components/decoration-tag.html) na documentação de componentes em desenvolvimento.
+>
+>O AEM oferece lógica simples e clara controlando as tags de decoração que envolvem elementos incluídos. Para mais detalhes, consulte [Tag de decoração](https://docs.adobe.com/content/help/pt-BR/experience-manager-65/developing/components/decoration-tag.html) na documentação de componentes em desenvolvimento.
 
 ### include {#include}
 
