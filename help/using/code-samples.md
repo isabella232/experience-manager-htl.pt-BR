@@ -1,23 +1,22 @@
 ---
 title: Amostras de código
-description: Amostras de código incluindo a Implementação de referência We.Retail
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
-workflow-type: tm+mt
+description: Amostras de código, incluindo a implementação de referência We.Retail
+exl-id: cdc0a525-e5d1-4d7f-97ae-b9192163caee
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
+workflow-type: ht
 source-wordcount: '107'
-ht-degree: 11%
+ht-degree: 100%
 
 ---
 
-
 # Amostras de código {#code-samples}
 
-Veja a seguir exemplos de código para HTL:
+A seguir, temos amostras de código para HTL:
 
-* [Tutorial](https://docs.adobe.com/content/help/en/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html)  WKND - Este tutorial aborda a implementação de um site AEM para uma marca de estilo de vida fictício na WKND e aborda tópicos fundamentais como configuração de projeto, Componentes principais, Modelos editáveis, bibliotecas do lado do cliente e desenvolvimento de componentes com a Adobe Experience Manager Sites, todos implementados em HTL.
-* [Exemplo](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc)  HTL TodoMVC - uma implementação AEM + HTL do exercício famoso.
+* [Tutorial WKND](https://docs.adobe.com/content/help/pt-BR/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) - Este tutorial aborda a implementação de um site AEM para uma marca fictícia de estilo de vida, a WKND. Aborda tópicos fundamentais, como configuração do projeto, Componentes principais, Modelos editáveis, Bibliotecas do lado do cliente e desenvolvimento de componentes com o Adobe Experience Manager Sites, todos implementados em HTL.
+* [Exemplo de HTL TodoMVC](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc) - uma implementação AEM + HTL do famoso exercício.
 
-Pergunte às sessões de especialistas:
+Sessões Pergunte a um especialista:
 
-* [Sessão HTL de Jan 2015 (Introdução ao HTL)](http://scottsdigitalcommunity.blogspot.ca/2015/01/upcoming-sessions-of-ask-aem-community.html)
-* [Sessão HTL de março de 2016 (desenvolvimento avançado de componentes)](http://scottsdigitalcommunity.blogspot.ca/2016/03/ask-aem-community-experts-deep-dive.html)
+* [Sessão HTL de janeiro de 2015 (Introdução ao HTL)](http://scottsdigitalcommunity.blogspot.ca/2015/01/upcoming-sessions-of-ask-aem-community.html)
+* [Sessão HTL de março de 2016 (Desenvolvimento avançado de componentes)](http://scottsdigitalcommunity.blogspot.ca/2016/03/ask-aem-community-experts-deep-dive.html)
