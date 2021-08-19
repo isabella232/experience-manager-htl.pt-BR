@@ -1,20 +1,19 @@
 ---
-title: Visão geral do Adobe Experience Manager HTL
+title: Visão geral do HTL do Adobe Experience Manager
 description: A finalidade do HTL compatível com o AEM é oferecer uma estrutura corporativa da Web altamente produtiva que aumenta a segurança e permite que desenvolvedores de HTML sem conhecimento em Java tenham uma melhor participação nos projetos AEM.
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
-workflow-type: tm+mt
+exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
+workflow-type: ht
 source-wordcount: '667'
-ht-degree: 94%
+ht-degree: 100%
 
 ---
-
 
 # Visão geral {#overview}
 
 A finalidade da Linguagem de modelo HTML (HTL) compatível com o Adobe Experience Manager (AEM) é oferecer uma estrutura corporativa da Web altamente produtiva que aumenta a segurança e permite que desenvolvedores de HTML sem conhecimento em Java tenham uma melhor participação nos projetos AEM.
 
-O Linguagem de modelo HTML é o sistema de modelo preferencial e recomendado para o lado do servidor para HTML no AEM. O HTL foi introduzido com o AEM 6.0 e substitui o JSP (JavaServer Pages). Para desenvolvedores da Web que precisam criar sites corporativos robustos, a Linguagem de modelo HTML ajuda a aumentar a segurança e a eficiência do desenvolvimento.
+A Linguagem de modelo HTML é o sistema de modelo preferencial e recomendado do lado do servidor para HTML no AEM. O HTL foi introduzido com o AEM 6.0 e substitui o JSP (JavaServer Pages). Para desenvolvedores da Web que precisam criar sites corporativos robustos, a Linguagem de modelo HTML ajuda a aumentar a segurança e a eficiência do desenvolvimento.
 
 ## Maior segurança {#increased-security}
 
@@ -34,7 +33,7 @@ Para projetos AEM, maior segurança, desenvolvimento simplificado e melhor colab
 
 Especificamente, a partir do que foi observado ao reimplementar o site Adobe.com com a Linguagem de modelo HTML, o custo e a duração do projeto podem ser reduzidos em cerca de 25%.
 
-![Aumento da eficácia e redução dos custos](assets/chlimage_1.png)
+![Aumento de eficiência e redução de custos](assets/chlimage_1.png)
 
 O diagrama acima mostra que possivelmente as seguintes melhorias na eficiência foram viabilizadas pelo HTL:
 
