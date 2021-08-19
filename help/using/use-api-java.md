@@ -1,22 +1,21 @@
 ---
 title: API de uso do Java do HTL
-description: 'Linguagem de modelo HTML - HTL - A API de uso de Java habilita um arquivo de HTL para acessar métodos de ajuda em uma classe de Java personalizada. '
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
-workflow-type: tm+mt
+description: A API de uso do Java da Linguagem de modelo HTML (HTL) permite que um arquivo de HTL acesse métodos de ajuda em uma classe de Java personalizada.
+exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
+workflow-type: ht
 source-wordcount: '2558'
-ht-degree: 1%
+ht-degree: 100%
 
 ---
 
-
 # API de uso do Java do HTL {#htl-java-use-api}
 
-A HTML Template Language (HTL) Java Use-API permite que um arquivo HTL acesse métodos auxiliares em uma classe Java personalizada por meio de `data-sly-use`. Isso permite que toda a lógica comercial complexa seja encapsulada no código Java, enquanto o código HTL trata somente da produção de marcação direta.
+A API de uso do Java da Linguagem de modelo HTML (HTL) permite que um arquivo de HTL acesse métodos de ajuda em uma classe de Java personalizada `data-sly-use`. Isso permite que toda lógica de negócios complexa seja encapsulada no código Java, enquanto o código HTL lida somente com a produção de marcação direta.
 
-Um objeto Java Use-API pode ser um POJO simples, instanciado por uma implementação específica por meio do construtor padrão do POJO.
+Um objeto da API de uso do Java pode ser um POJO simples, instanciado por uma implementação específica por meio do construtor padrão do POJO.
 
-Os POJOs Use-API também podem expor um método público, chamado init, com a seguinte assinatura:
+Os POJOs da API de uso também podem expor um método público, chamado init, com a seguinte assinatura:
 
 ```java
     /**
@@ -27,11 +26,11 @@ Os POJOs Use-API também podem expor um método público, chamado init, com a se
     public void init(javax.script.Bindings bindings);
 ```
 
-O mapa `bindings` pode conter objetos que fornecem contexto para o script HTL executado no momento que o objeto Use-API pode usar para seu processamento.
+O mapa de `bindings` pode conter objetos que fornecem contexto para o script HTL executado no momento que o objeto da API de uso pode usar para processamento.
 
 ## Um exemplo simples {#a-simple-example}
 
-Vamos start com um componente HTL que não tem uma classe de uso. Ele consiste em um único arquivo, `/apps/my-example/components/info.html`
+Começaremos com um componente HTL que não tem uma classe de uso. Ele consiste em um único arquivo, `/apps/my-example/components/info.html`
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html}
 
@@ -42,7 +41,7 @@ Vamos start com um componente HTL que não tem uma classe de uso. Ele consiste e
 </div>
 ```
 
-Também adicionamos algum conteúdo para esse componente a ser renderizado em `/content/my-example/`:
+Também adicionamos conteúdo para esse componente renderizar em `/content/my-example/`:
 
 ### `http://<host>:<port>/content/my-example.json` {#http-localhost-content-my-example-json}
 
@@ -54,7 +53,7 @@ Também adicionamos algum conteúdo para esse componente a ser renderizado em `/
 }
 ```
 
-Quando esse conteúdo é acessado, o arquivo HTL é executado. No código HTL, usamos o objeto de contexto `properties` para acessar `title` e `description` do recurso atual e exibi-los. O HTML de saída será:
+Quando esse conteúdo é acessado, o arquivo HTL é executado. No código HTL, usamos o objeto de contexto `properties` para acessar o `title` e a `description` do recurso atual e exibi-los. O HTML de saída será:
 
 ### `view-source:http://<host>:<port>/content/my-example.html` {#view-source-http-localhost-content-my-example-html}
 
@@ -65,15 +64,15 @@ Quando esse conteúdo é acessado, o arquivo HTL é executado. No código HTL, u
 </div>
 ```
 
-### Adicionando uma Classe de Uso {#adding-a-use-class}
+### Adicionar uma classe de uso {#adding-a-use-class}
 
-O componente **info** na sua versão atual não precisa de uma classe de uso para executar sua função (muito simples). Há casos, no entanto, em que você precisa fazer coisas que não podem ser feitas em HTL e, portanto, você precisa de uma classe de uso. Mas lembre-se do seguinte:
+O componente **info** na sua versão atual não precisa de uma classe de uso para executar sua função (muito simples). Entretanto, há casos em que é necessário fazer coisas que não podem ser feitas no HTL e, portanto, você precisa de uma classe de uso. Mas lembre-se:
 
 >[!NOTE]
 >
->Uma classe use só deve ser usada quando algo não pode ser feito somente em HTL.
+>Uma classe de uso só deve ser usada quando algo não pode ser feito somente em HTL.
 
-Por exemplo, suponha que você deseja que o componente `info` exiba as propriedades `title` e `description` do recurso, mas tudo em minúsculas. Como o HTL não tem um método para sequências de caracteres em minúsculas, você precisará de uma classe de uso. Podemos fazer isso adicionando uma classe de uso Java e alterando `info.html` da seguinte forma:
+Por exemplo, suponha que você deseja que o componente `info` exiba as propriedades `title` e `description` do recurso, mas todas em minúsculas. Como o HTL não tem um método para cadeias de caracteres em minúsculas, você precisará de uma classe de uso. Podemos fazer isso adicionando uma classe de uso de Java e alterando o `info.html` da seguinte maneira:
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-1}
 
@@ -111,27 +110,27 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-Nas seções a seguir, percorremos as diferentes partes do código.
+Nas seções a seguir, analisaremos as diferentes partes do código.
 
-### Classe Java Local vs. Pacote {#local-vs-bundle-java-class}
+### Classe de Java local vs. pacote {#local-vs-bundle-java-class}
 
-A classe de uso do Java pode ser instalada de duas formas: **local** ou **bundle**. Este exemplo usa uma instalação local.
+A classe de uso do Java pode ser instalada de duas maneiras: **local** ou **pacote**. Este exemplo usa uma instalação local.
 
-Em uma instalação local, o arquivo de origem Java é colocado junto ao arquivo HTL, na mesma pasta do repositório. A fonte é compilada automaticamente sob demanda. Não é necessária nenhuma etapa separada de compilação ou embalagem.
+Em uma instalação local, o arquivo de origem Java é colocado junto com o arquivo HTL, na mesma pasta do repositório. A origem é automaticamente compilada sob demanda. Não é necessária nenhuma etapa de compilação ou empacotamento separada.
 
-Em uma instalação de pacote, a classe Java deve ser compilada e implantada em um pacote OSGi usando o mecanismo de implantação de conjunto de AEM padrão (consulte [Classe Java embutida](#bundled-java-class)).
+Em uma instalação de pacote, a classe de Java deve ser compilada e implantada em um pacote OSGi usando o mecanismo padrão de implantação de pacote do AEM (consulte [Classe de Java agrupada](#bundled-java-class)).
 
 >[!NOTE]
 >
 >Uma **classe de uso local do Java** é recomendada quando a classe de uso é específica para o componente em questão.
 >
->Um **bundle Java use-class** é recomendado quando o código Java implementa um serviço que é acessado de vários componentes HTL.
+>Uma **classe de uso em pacote do Java** é recomendada quando o código Java implementa um serviço acessado de vários componentes HTL.
 
 ### O pacote Java é o caminho do repositório {#java-package-is-repository-path}
 
-Quando uma instalação local é usada, o nome do pacote da classe use deve corresponder ao do local da pasta do repositório, com todos os hífens no caminho substituídos pelos sublinhados no nome do pacote.
+Quando uma instalação local é usada, o nome do pacote da classe de uso deve corresponder ao do local da pasta do repositório, com quaisquer hifens no caminho substituídos por sublinhados no nome do pacote.
 
-Nesse caso, `Info.java` está localizado em `/apps/my-example/components/info`, portanto, o pacote é `apps.my_example.components.info`:
+Neste caso, `Info.java` está localizado em `/apps/my-example/components/info`, portanto, o pacote é `apps.my_example.components.info`:
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-1}
 
@@ -149,11 +148,11 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->O uso de hífens nos nomes de itens do repositório é uma prática recomendada AEM desenvolvimento. No entanto, os hífens são ilegais nos nomes dos pacotes Java. Por esse motivo, **todos os hífens no caminho do repositório devem ser convertidos em sublinhados no nome do pacote**.
+>Usar hifens nos nomes dos itens do repositório é uma prática recomendada no desenvolvimento do AEM. No entanto, os hifens são inválidos nos nomes dos pacotes Java. Por esse motivo, **todos os hifens no caminho do repositório devem ser convertidos em sublinhados no nome do pacote**.
 
 ### Extensão `WCMUsePojo` {#extending-wcmusepojo}
 
-Embora existam várias maneiras de incorporar uma classe Java com HTL (consulte Alternativas para `WCMUsePojo`), o mais simples é estender a classe `WCMUsePojo`:
+Embora existam várias maneiras de incorporar uma classe de Java com HTL (consulte Alternativas para `WCMUsePojo`), o mais simples é estender a classe `WCMUsePojo`:
 
 #### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-2}
 
@@ -168,9 +167,9 @@ public class Info extends WCMUsePojo
 }
 ```
 
-### Inicializando a classe {#initializing-the-class}
+### Inicializar a classe {#initializing-the-class}
 
-Quando a classe use é estendida de `WCMUsePojo`, a inicialização é realizada substituindo o método `activate`:
+Quando a classe de uso é estendida de `WCMUsePojo`, a inicialização é executada substituindo o método `activate`:
 
 ### /apps/my-example/component/info/Info.java {#apps-my-example-component-info-info-java-3}
 
@@ -194,43 +193,43 @@ public class Info extends WCMUsePojo {
 
 ### Contexto {#context}
 
-Normalmente, o método [ativate](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) é usado para pré-calcular e armazenar (em variáveis de membro) os valores necessários no código HTL, com base no contexto atual (a solicitação atual e o recurso, por exemplo).
+Normalmente, o método [ativar](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) é usado para pré-calcular e armazenar (em variáveis de membro) os valores necessários no código HTL, com base no contexto atual (na solicitação e no recurso atuais, por exemplo).
 
 A classe `WCMUsePojo` fornece acesso ao mesmo conjunto de objetos de contexto que estão disponíveis em um arquivo HTL (consulte [Objetos Globais](global-objects.md)).
 
 Em uma classe que estende `WCMUsePojo`, os objetos de contexto podem ser acessados pelo nome usando
 
-[`<T> T get(String name, Class<T> type)`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)
+[`<T> T get(String name, Class<T> type)`](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)
 
 Como alternativa, os objetos de contexto comumente usados podem ser acessados diretamente pelo **método de conveniência** apropriado:
 
 |  |  |
 |---|---|
-| [PageManager](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/PageManager.html) | [getPageManager()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageManager()) |
-| [Página](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getCurrentPage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentPage()) |
-| [Página](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getResourcePage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourcePage()) |
-| [ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getPageProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageProperties()) |
-| [ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getProperties()) |
-| [Designer](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Designer.html) | [getDesigner()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getDesigner()) |
-| [Design](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Design.html) | [getCurrentDesign()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentDesign()) |
-| [Estilo](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Style.html) | [getCurrentStyle()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentStyle()) |
-| [Componente](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/components/Component.html) | [getComponent()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getComponent()) |
-| [ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getInheritedProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getInheritedProperties) |
-| [Recurso](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/Resource.html) | [getResource()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResource()) |
-| [ResourceResolver](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ResourceResolver.html) | [getResourceResolver()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourceResolver()) |
-| [SlingHttpServletRequest](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) | [getRequest()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getRequest()) |
-| [SlingHttpServletResponse](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletResponse.html) | [getResponse()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResponse()) |
-| [SlingScriptHelper](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/scripting/SlingScriptHelper.html) | [getSlingScriptHelper()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getSlingScriptHelper()) |
+| [PageManager](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/PageManager.html) | [getPageManager()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageManager()) |
+| [Página](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getCurrentPage()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentPage()) |
+| [Página](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getResourcePage()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourcePage()) |
+| [ValueMap](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getPageProperties()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageProperties()) |
+| [ValueMap](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getProperties()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getProperties()) |
+| [Designer](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Designer.html) | [getDesigner()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getDesigner()) |
+| [Design](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Design.html) | [getCurrentDesign()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentDesign()) |
+| [Estilo](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Style.html) | [getCurrentStyle()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentStyle()) |
+| [Componente](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/components/Component.html) | [getComponent()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getComponent()) |
+| [ValueMap](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getInheritedProperties()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getInheritedProperties) |
+| [Recurso](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/Resource.html) | [getResource()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResource()) |
+| [ResourceResolver](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ResourceResolver.html) | [getResourceResolver()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourceResolver()) |
+| [SlingHttpServletRequest](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) | [getRequest()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getRequest()) |
+| [SlingHttpServletResponse](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletResponse.html) | [getResponse()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResponse()) |
+| [SlingScriptHelper](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/scripting/SlingScriptHelper.html) | [getSlingScriptHelper()](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getSlingScriptHelper()) |
 
 ### Métodos Getter {#getter-methods}
 
-Depois que a classe use for inicializada, o arquivo HTL será executado. Durante esse estágio, o HTL normalmente obtém o estado de várias variáveis membro da classe de uso e as renderiza para apresentação.
+Depois que a classe de uso for inicializada, o arquivo HTL será executado. Durante esse estágio, o HTL normalmente obtém o estado de diversas variáveis de membro da classe de uso e as renderiza para a apresentação.
 
-Para fornecer acesso a esses valores a partir do arquivo HTL, é necessário definir métodos getter personalizados na classe use, de acordo com a seguinte convenção de nomenclatura:
+Para fornecer acesso a esses valores a partir do arquivo HTL, você deve definir métodos Getter personalizados na classe de uso de acordo com a seguinte convenção de nomenclatura:
 
 * Um método do formulário `getXyz` exporá no arquivo HTL uma propriedade de objeto chamada `xyz`.
 
-No exemplo a seguir, os métodos `getTitle` e `getDescription` resultam em propriedades de objetos `title` e `description` se tornarem acessíveis no contexto do arquivo HTL:
+No exemplo a seguir, os métodos `getTitle` e `getDescription` resultam nas propriedades do objeto `title` e `description` tornando-se acessíveis no contexto do arquivo HTL:
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-4}
 
@@ -251,9 +250,9 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-### atributo de uso inteligente de dados {#data-sly-use-attribute}
+### Atributo data-sly-use {#data-sly-use-attribute}
 
-O atributo `data-sly-use` é usado para inicializar a use-class dentro do código HTL. Em nosso exemplo, o atributo `data-sly-use` declara que queremos usar a classe `Info`. Podemos usar apenas o nome local da classe, pois estamos usando uma instalação local (uma vez que o arquivo de origem Java foi colocado na mesma pasta do arquivo HTL). Se estivéssemos usando uma instalação de conjunto, teríamos que especificar o nome de classe totalmente qualificado.
+O atributo `data-sly-use` é usado para inicializar a classe de uso no seu código HTL. No nosso exemplo, o atributo `data-sly-use` declara que queremos usar a classe `Info`. Podemos usar apenas o nome local da classe, porque estamos usando uma instalação local (uma vez que o arquivo de origem Java tenha sido colocado na mesma pasta que o arquivo HTL). Se estivéssemos usando uma instalação de pacote, precisaríamos especificar o nome de classe totalmente qualificado.
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-2}
 
@@ -266,7 +265,7 @@ O atributo `data-sly-use` é usado para inicializar a use-class dentro do códig
 
 ### Identificador local {#local-identifier}
 
-O identificador `info` (após o ponto em `data-sly-use.info`) é usado no arquivo HTL para identificar a classe. O escopo desse identificador é global dentro do arquivo, depois que ele é declarado. Não está limitado ao elemento que contém a instrução `data-sly-use`.
+O identificador `info` (após o ponto em `data-sly-use.info`) é usado no arquivo HTL para identificar a classe. O escopo desse identificador é global dentro do arquivo, depois que ele tiver sido declarado. Não está limitado ao elemento que contém a instrução `data-sly-use`.
 
 ### `/apps/my-example/component/info/info.html`{#apps-my-example-component-info-info-html-3}
 
@@ -277,9 +276,9 @@ O identificador `info` (após o ponto em `data-sly-use.info`) é usado no arquiv
 </div>
 ```
 
-### Obtendo propriedades {#getting-properties}
+### Obter propriedades {#getting-properties}
 
-O identificador `info` é então usado para acessar as propriedades do objeto `title` e `description` que foram expostas por meio dos métodos getter `Info.getTitle` e `Info.getDescription`.
+O identificador `info` é então usado para acessar as propriedades do objeto `title` e `description`, que foram expostas por meio dos métodos Getter `Info.getTitle` e `Info.getDescription`.
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-4}
 
@@ -292,7 +291,7 @@ O identificador `info` é então usado para acessar as propriedades do objeto `t
 
 ### Saída {#output}
 
-Agora, quando acessamos `/content/my-example.html`, ele retornará o seguinte HTML:
+Agora, ao acessar `/content/my-example.html`, ele retornará o seguinte HTML:
 
 ### `view-source:http://<host>:<port>/content/my-example.html` {#view-source-http-localhost-content-my-example-html-1}
 
@@ -305,15 +304,15 @@ Agora, quando acessamos `/content/my-example.html`, ele retornará o seguinte HT
 
 ## Além das noções básicas {#beyond-the-basics}
 
-Nesta seção, apresentaremos outros recursos que vão além do exemplo simples acima:
+Nesta seção, introduziremos outros recursos que vão além do exemplo simples acima:
 
-* Passando parâmetros para uma classe de uso.
-* Classe de uso do Java embutida.
+* Passar parâmetros para uma classe de uso.
+* Classe de uso de Java agrupada.
 * Alternativas para `WCMUsePojo`
 
-### Passando parâmetros {#passing-parameters}
+### Passagem de parâmetros {#passing-parameters}
 
-Os parâmetros podem ser passados para uma classe use na inicialização. Por exemplo, nós poderíamos fazer algo assim:
+Os parâmetros podem ser passados para uma classe de uso mediante inicialização. No caso, podemos fazer algo como no exemplo a seguir:
 
 ### `/content/my-example/component/info/info.html` {#content-my-example-component-info-info-html}
 
@@ -325,7 +324,7 @@ Os parâmetros podem ser passados para uma classe use na inicialização. Por ex
 </div>
 ```
 
-Estamos transmitindo um parâmetro chamado `text`. Em seguida, a classe use maiúscula a string que recuperamos e exibe o resultado com `info.upperCaseText`. Esta é a classe de uso ajustada:
+Aqui, estamos passando um parâmetro chamado `text`. A classe de uso passa para maiúscula a cadeia de caracteres recuperada e exibe o resultado com `info.upperCaseText`. Esta é a classe de uso ajustada:
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-5}
 
@@ -358,27 +357,27 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-O parâmetro é acessado pelo método `WCMUsePojo` [`<T> T get(String paramName, Class<T> type)`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html)
+O parâmetro é acessado por meio do método `WCMUsePojo` [`<T> T get(String paramName, Class<T> type)`](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html)
 
-No nosso caso, a declaração:
+No nosso caso, a instrução:
 
 `get("text", String.class)`
 
-A string é então revertida e exposta pelo método:
+A cadeia de caracteres é então revertida e exposta pelo método:
 
 `getReverseText()`
 
-### Enviar apenas parâmetros do modelo de sly de dados {#only-pass-parameters-from-data-sly-template}
+### Passar parâmetros somente a partir de data-sly-template {#only-pass-parameters-from-data-sly-template}
 
-Embora o exemplo acima esteja tecnicamente correto, não faz muito sentido passar um valor de HTL para inicializar uma classe use, quando o valor em questão está disponível no contexto de execução do código HTL (ou, trivialmente, o valor é estático, como acima).
+Embora o exemplo acima esteja tecnicamente correto, não faz muito sentido passar um valor a partir de HTL para inicializar uma classe de uso, quando o valor em questão está disponível no contexto de execução do código HTL (ou, trivialmente, o valor é estático, conforme acima).
 
-O motivo é que a classe use sempre terá acesso ao mesmo contexto de execução que o código HTL. Isto traz à tona um ponto de importação das melhores práticas:
+O motivo é que a classe de uso sempre terá acesso ao mesmo contexto de execução que o código HTL. Isso traz à tona um ponto de importação de prática recomendada:
 
 >[!NOTE]
 >
->A transmissão de um parâmetro para uma classe use só deve ser feita quando a classe use for usada em um arquivo `data-sly-template` que é chamado de outro arquivo HTL com parâmetros que precisam ser transmitidos.
+>Passar um parâmetro para uma classe de uso só deve ser feita quando a classe de uso for usada em um arquivo `data-sly-template`, sendo ele mesmo chamado a partir de outro arquivo HTL com parâmetros que precisam ser passados.
 
-Por exemplo, vamos criar um arquivo separado `data-sly-template` ao lado de nosso exemplo existente. Chamaremos o novo arquivo `extra.html`. Ele contém um bloco `data-sly-template` chamado `extra`:
+Por exemplo, vamos criar um arquivo `data-sly-template` separado junto com nosso exemplo existente. Chamaremos o novo arquivo de `extra.html`. Ele contém um bloco `data-sly-template` chamado `extra`:
 
 ### `/apps/my-example/component/info/extra.html` {#apps-my-example-component-info-extra-html}
 
@@ -389,9 +388,9 @@ Por exemplo, vamos criar um arquivo separado `data-sly-template` ao lado de noss
 </template>
 ```
 
-O modelo `extra` utiliza um único parâmetro, `text`. Em seguida, inicializa a classe de uso do Java `ExtraHelper` com o nome local `extraHelper` e passa o valor do parâmetro de modelo `text` como o parâmetro use-class `text`.
+O modelo `extra` toma um único parâmetro, `text`. Em seguida, ele inicializa a classe de uso do Java `ExtraHelper`, com o nome local `extraHelper`, e passa o valor do parâmetro de modelo `text` como o parâmetro de classe de uso `text`.
 
-O corpo do modelo obtém a propriedade `extraHelper.reversedText` (que, sob o capô, chama `ExtraHelper.getReversedText()`) e exibe esse valor.
+O corpo do modelo obtém a propriedade `extraHelper.reversedText` (que, por baixo dos panos, na verdade é chamada de `ExtraHelper.getReversedText()`) e exibe esse valor.
 
 Também adaptamos nosso `info.html` existente para usar esse novo modelo:
 
@@ -409,15 +408,15 @@ Também adaptamos nosso `info.html` existente para usar esse novo modelo:
 </div>
 ```
 
-O arquivo `info.html` agora contém duas `data-sly-use` instruções, a original que importa a `Info` classe de uso Java e uma nova que importa o arquivo de modelo sob o nome local `extra`.
+O arquivo `info.html` agora contém duas instruções `data-sly-use`: a original, que importa a classe de uso do Java `Info`; e uma nova, que importa o arquivo de modelo sob o nome local `extra`.
 
-Observe que poderíamos ter colocado o bloco de modelo dentro do arquivo `info.html` para evitar o segundo `data-sly-use`, mas um arquivo de modelo separado é mais comum e mais reutilizável.
+Observe que poderíamos ter colocado o bloco do modelo dentro do arquivo `info.html` para evitar o segundo `data-sly-use`, mas um arquivo de modelo separado é mais comum e mais reutilizável.
 
-A classe `Info` é empregada como antes, chamando seus métodos getter `getLowerCaseTitle()` e `getLowerCaseDescription()` pelas propriedades HTL correspondentes `info.lowerCaseTitle` e `info.lowerCaseDescription`.
+A classe `Info` é empregada como antes, chamando seus métodos Getter `getLowerCaseTitle()` e `getLowerCaseDescription()` por meio de suas propriedades HTL correspondentes `info.lowerCaseTitle` e `info.lowerCaseDescription`.
 
-Em seguida, executamos um `data-sly-call` para o modelo `extra` e passamos para ele o valor `properties.description` como parâmetro `text`.
+Em seguida, executamos um `data-sly-call` para o modelo `extra` e passamos o valor `properties.description` como o parâmetro `text`.
 
-A classe de uso do Java `Info.java` foi alterada para lidar com o novo parâmetro de texto:
+A classe de uso do Java `Info.java` é alterada para lidar com o novo parâmetro de texto:
 
 ### `/apps/my-example/component/info/ExtraHelper.java` {#apps-my-example-component-info-extrahelper-java}
 
@@ -444,11 +443,11 @@ public class ExtraHelper extends WCMUsePojo {
 }
 ```
 
-O parâmetro `text` é recuperado com `get("text", String.class)`, o valor é revertido e disponibilizado como o objeto HTL `reversedText` por meio do getter `getReversedText()`.
+O parâmetro `text` é recuperado com `get("text", String.class)`, o valor é revertido e disponibilizado como o objeto HTL `reversedText` por meio do Getter `getReversedText()`.
 
-### Classe Java embutida {#bundled-java-class}
+### Classe de Java agrupada {#bundled-java-class}
 
-Com uma classe de uso de pacote, a classe deve ser compilada, empacotada e implantada em AEM usando o mecanismo de implantação de pacotes OSGi padrão. Em contraste com uma instalação local, a classe use **declaração do pacote** deve ser chamada normalmente:
+Com uma classe de uso agrupada, a classe deve ser compilada, empacotada e implantada no AEM usando o mecanismo de implantação de pacote OSGi padrão. Ao contrário de uma instalação local, a classe de uso **declaração do pacote** deve ser nomeada normalmente:
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-6}
 
@@ -462,7 +461,7 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-e, a instrução `data-sly-use` deve fazer referência ao nome de classe totalmente qualificado, em oposição ao nome de classe local:
+e a instrução `data-sly-use` deve fazer referência ao nome de classe totalmente qualificado, em vez de apenas ao nome de classe local:
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-6}
 
@@ -475,30 +474,30 @@ e, a instrução `data-sly-use` deve fazer referência ao nome de classe totalme
 
 ### Alternativas para `WCMUsePojo` {#alternatives-to-wcmusepojo}
 
-A maneira mais comum de criar uma classe de uso Java é estender `WCMUsePojo`. No entanto, existem várias outras opções. Para entender essas variantes, é útil entender como a instrução HTL `data-sly-use` funciona sob o capô.
+A maneira mais comum de criar uma classe de uso do Java é estender `WCMUsePojo`. No entanto, existem várias outras opções. Para entendê-las, seria de ajuda entender como a instrução HTL `data-sly-use` funciona por baixo dos panos.
 
-Suponha que você tenha a seguinte instrução `data-sly-use`:
+Suponhamos que você tenha a seguinte instrução `data-sly-use`:
 
 **`<div data-sly-use.`** `localName`**`="`**`UseClass`**`">`**
 
-O sistema processa a declaração da seguinte maneira:
+O sistema processa a instrução da seguinte maneira:
 
 (1)
 
-* Se houver um arquivo local `UseClass.java` no mesmo diretório do arquivo HTL, tente compilar e carregar essa classe. Se tiver êxito, vá para (2).
-* Caso contrário, interprete `UseClass` como um nome de classe totalmente qualificado e tente carregá-lo do ambiente OSGi. Se tiver êxito, vá para (2).
-* Caso contrário, interprete `UseClass` como um caminho para um arquivo HTL ou JavaScript e carregue esse arquivo. Se o goto for bem-sucedido (4).
+* Se houver um arquivo local `UseClass.java` no mesmo diretório do arquivo HTL, tente compilar e carregar essa classe. Se tiver êxito, acesse a etapa (2).
+* Caso contrário, interprete `UseClass` como um nome de classe totalmente qualificado e tente carregá-lo do ambiente OSGi. Se tiver êxito, acesse a etapa (2).
+* Caso contrário, interprete `UseClass` como um caminho para um arquivo HTL ou JavaScript e carregue esse arquivo. Se tiver êxito, acesse a etapa (4).
 
 (2)
 
-* Tente adaptar o `Resource` atual a `UseClass`. Se tiver êxito, vá para (3).
-* Caso contrário, tente adaptar o `Request` atual a `UseClass`. Se tiver êxito, vá para (3).
-* Caso contrário, tente instanciar `UseClass` com um construtor de argumento zero. Se tiver êxito, vá para (3).
+* Tente adaptar o `Resource` atual para `UseClass`. Se tiver êxito, acesse a etapa (3).
+* Caso contrário, tente adaptar a `Request` atual para `UseClass`. Se tiver êxito, acesse a etapa (3).
+* Caso contrário, tente instanciar `UseClass` com um construtor de argumento zero. Se tiver êxito, acesse a etapa (3).
 
 (3)
 
-* Em HTL, vincule o objeto recém-adaptado ou criado ao nome `localName`.
-* Se `UseClass` implementar [`io.sightly.java.api.Use`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html), chame o método `init`, transmitindo o contexto de execução atual (na forma de um objeto `javax.scripting.Bindings`).
+* Dentro do HTL, vincule o objeto recém-adaptado ou criado ao nome `localName`.
+* Se `UseClass` implementar [`io.sightly.java.api.Use`](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html), chame o método `init`, transmitindo o contexto de execução atual (no formato de um objeto `javax.scripting.Bindings`).
 
 (4)
 
@@ -507,19 +506,19 @@ O sistema processa a declaração da seguinte maneira:
 
 Alguns pontos importantes sobre a descrição acima:
 
-* Qualquer classe que seja adaptável de `Resource`, adaptável de `Request` ou que tenha um construtor de argumento zero pode ser uma classe use. A classe não precisa estender `WCMUsePojo` ou mesmo implementar `Use`.
-* Entretanto, se a classe use *do* implementar `Use`, seu método `init` será chamado automaticamente com o contexto atual, permitindo que você coloque o código de inicialização lá que dependa desse contexto.
-* Uma classe use que estende `WCMUsePojo` é apenas um caso especial de implementação `Use`. Ele fornece os métodos de contexto de conveniência e seu método `activate` é chamado automaticamente de `Use.init`.
+* Qualquer classe que seja adaptável a partir de `Resource`, adaptável a partir de `Request` ou que tenha um construtor de argumento zero pode ser uma classe de uso. A classe não precisa estender `WCMUsePojo`, nem mesmo implementar `Use`.
+* No entanto, se a classe de uso *de fato* implementar `Use`, seu método `init` será chamado automaticamente com o contexto atual, permitindo que você coloque o código de inicialização que dependa desse contexto.
+* Uma classe de uso que estende o `WCMUsePojo` é apenas um caso especial de implementação `Use`. Ela fornece os métodos de contexto de conveniência e seu método `activate` é chamado automaticamente a partir de `Use.init`.
 
-### Implementar diretamente o uso da interface {#directly-implement-interface-use}
+### Implementar o uso da interface diretamente {#directly-implement-interface-use}
 
-Embora a maneira mais comum de criar uma classe de uso seja estender `WCMUsePojo`, também é possível implementar diretamente a própria interface [`io.sightly.java.api.Use`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html).
+Embora a maneira mais comum de criar uma classe de uso seja estender `WCMUsePojo`, também é possível implementar diretamente a própria interface [`io.sightly.java.api.Use`](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html).
 
 A interface `Use` define apenas um método:
 
-[`public void init(javax.script.Bindings bindings)`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use#init(javax.script.Bindings))
+[`public void init(javax.script.Bindings bindings)`](https://helpx.adobe.com/br/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use#init(javax.script.Bindings))
 
-O método `init` será chamado na inicialização da classe com um objeto `Bindings` que armazena todos os objetos de contexto e quaisquer parâmetros transmitidos para a classe use.
+O método `init` será chamado na inicialização da classe com um objeto `Bindings` que armazena todos os objetos de contexto e quaisquer parâmetros transmitidos para a classe de uso.
 
 Toda funcionalidade adicional (como o equivalente de `WCMUsePojo.getProperties()`) deve ser implementada explicitamente usando o objeto [`javax.script.Bindings`](http://docs.oracle.com/javase/7/docs/api/javax/script/Bindings.html). Por exemplo:
 
@@ -545,13 +544,13 @@ public class MyComponent implements Use {
 }
 ```
 
-O caso principal para implementar a interface `Use` em vez de estender `WCMUsePojo` é quando você deseja usar uma subclasse de uma classe já existente como a classe use.
+O principal caso para implementar a interface de `Use` por conta própria em vez de estender o `WCMUsePojo` é quando você deseja usar uma subclasse de uma classe já existente como a classe de uso.
 
-### Adaptável a partir do recurso {#adaptable-from-resource}
+### Adaptável do recurso {#adaptable-from-resource}
 
 Outra opção é usar uma classe auxiliar que seja adaptável de `org.apache.sling.api.resource.Resource`.
 
-Digamos que você precise gravar um script HTL que exiba o tipo de mimepe de um ativo DAM. Nesse caso, você sabe que quando seu script HTL é chamado, ele estará dentro do contexto de um `Resource` que envolve um JCR `Node` com o tipo de nó `dam:Asset`.
+Digamos que você precise gravar um script HTL que exiba o MIMEtype de um ativo DAM. Nesse caso, você sabe que quando seu script HTL é chamado, ele estará no contexto de um `Resource` que envolve um `Node` JCR com o Nodetype `dam:Asset`.
 
 Você sabe que um nó `dam:Asset` tem uma estrutura como esta:
 
@@ -601,9 +600,9 @@ Você sabe que um nó `dam:Asset` tem uma estrutura como esta:
 }
 ```
 
-Aqui, mostramos o ativo (uma imagem JPEG) que vem com uma instalação padrão de AEM como parte do exemplo geometrixx do projeto. O ativo é chamado `jane_doe.jpg` e seu tipo mimetype é `image/jpeg`.
+Aqui mostramos o ativo (uma imagem JPEG) que vem com uma instalação padrão do AEM como parte do projeto de exemplo Geometrixx. O ativo é chamado de `jane_doe.jpg` e o MIMEtype é `image/jpeg`.
 
-Para acessar o ativo de dentro do HTL, você pode declarar [`com.day.cq.dam.api.Asset`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/granite/asset/api/Asset.html) como a classe na instrução `data-sly-use` e, em seguida, usar um método get de `Asset` para recuperar as informações desejadas. Por exemplo:
+Para acessar o ativo de dentro do HTL, você pode declarar [`com.day.cq.dam.api.Asset`](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/granite/asset/api/Asset.html) como a classe na instrução `data-sly-use` e usar um método get de `Asset` para recuperar as informações desejadas. Por exemplo:
 
 ### `mimetype.html` {#mimetype-html}
 
@@ -613,10 +612,10 @@ Para acessar o ativo de dentro do HTL, você pode declarar [`com.day.cq.dam.api.
 </div>
 ```
 
-A instrução `data-sly-use` direciona o HTL para adaptar o `Resource` atual a um `Asset` e dá-lhe o nome local `asset`. Em seguida, ele chama o método `getMimeType` de `Asset` usando o encurtador de caracteres HTL: `asset.mimeType`.
+A instrução `data-sly-use` direciona o HTL para adaptar o `Resource` atual a um `Asset` e dar a ele o nome local `asset`. Em seguida, ele chama o método `getMimeType` de `Asset`, usando a abreviação getter HTL: `asset.mimeType`.
 
-### Adaptável a partir da solicitação {#adaptable-from-request}
+### Adaptável desde a solicitação {#adaptable-from-request}
 
-Também é possível empregar como classe de uso qualquer classe que seja adaptável de [`org.apache.sling.api.SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)
+Também é possível empregar como classe de uso qualquer classe que seja adaptável de [`org.apache.sling.api.SlingHttpServletRequest`](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)
 
-Como no caso acima de um adaptador de classe de uso de `Resource`, um adaptador de classe de uso de [`SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) pode ser especificado na instrução `data-sly-use`. Após a execução, a solicitação atual será adaptada à classe fornecida e o objeto resultante será disponibilizado dentro de HTL.
+Similar ao caso acima, de uma classe de uso adaptável de `Resource`, uma classe de uso adaptável de [`SlingHttpServletRequest`](https://helpx.adobe.com/br/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) pode ser especificada na instrução `data-sly-use`. Após a execução, a solicitação atual será adaptada à classe fornecida e o objeto resultante será disponibilizado no HTL.
