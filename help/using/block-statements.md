@@ -2,10 +2,10 @@
 title: Instruções em bloco do HTL
 description: As instruções em bloco da Linguagem de modelo HTML (HTL) são atributos de dados personalizados adicionados diretamente ao HTML existente.
 exl-id: a517dcef-ab7a-4d4c-a1a9-2e57aad034f7
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
+source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
+workflow-type: tm+mt
 source-wordcount: '1555'
-ht-degree: 100%
+ht-degree: 99%
 
 ---
 
@@ -59,7 +59,7 @@ Há várias instruções em bloco disponíveis. Quando usadas no mesmo elemento,
 1. `data-sly-set`, `data-sly-test`, `data-sly-use`
 1. `data-sly-call`
 1. `data-sly-text`
-1. `data-sly-element`, `data-sly-include`, `data-sly-resource`
+1. `data-sly-element`,  `data-sly-include`,  `data-sly-resource`
 1. `data-sly-unwrap`
 1. `data-sly-list`, `data-sly-repeat`
 1. `data-sly-attribute`
@@ -462,7 +462,7 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->O AEM oferece lógica simples e clara controlando as tags de decoração que envolvem elementos incluídos. Para mais detalhes, consulte [Tag de decoração](https://docs.adobe.com/content/help/pt-BR/experience-manager-65/developing/components/decoration-tag.html) na documentação de componentes em desenvolvimento.
+>O AEM oferece lógica simples e clara controlando as tags de decoração que envolvem elementos incluídos. Para mais detalhes, consulte [Tag de decoração](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/developing/full-stack/components-templates/decoration-tag.html) na documentação de componentes em desenvolvimento.
 
 ### include {#include}
 

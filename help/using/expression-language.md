@@ -2,10 +2,10 @@
 title: Linguagem de expressão do HTL
 description: A Linguagem de modelo HTML usa uma linguagem de expressão para acessar as estruturas de dados que fornecem os elementos dinâmicos da saída HTML.
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
-source-wordcount: '1854'
-ht-degree: 100%
+source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
+workflow-type: tm+mt
+source-wordcount: '1852'
+ht-degree: 99%
 
 ---
 
@@ -336,7 +336,7 @@ Os exemplos a seguir mostram que o formato é especificado primeiro, depois o va
 
 ### Internacionalização {#internationalization}
 
-Traduz a cadeia de caracteres para o idioma da *origem* atual (veja abaixo), usando o [dicionário](https://docs.adobe.com/content/help/pt-BR/experience-manager-65/developing/components/internationalization/i18n-translator.html) atual. Se nenhuma tradução for encontrada, a cadeia de caracteres original será usada.
+Traduz a cadeia de caracteres para o idioma da *origem* atual (veja abaixo), usando o [dicionário](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-translator.html) atual. Se nenhuma tradução for encontrada, a cadeia de caracteres original será usada.
 
 ```xml
 ${'Page' @ i18n}
