@@ -1,11 +1,11 @@
 ---
-title: O que são instruções de bloco HTL?
-description: Saiba mais sobre instruções de bloco HTL ou Linguagem de modelo de HTML (HTL). Declarações de bloco são atributos de dados personalizados adicionados diretamente ao HTML existente.
+title: O que são declarações de bloco HTL?
+description: Saiba mais sobre declarações de bloco HTL ou linguagem de modelo HTML (HTL). Declarações de bloco são atributos de dados personalizados adicionados diretamente ao HTML existente.
 exl-id: a517dcef-ab7a-4d4c-a1a9-2e57aad034f7
 source-git-commit: 79d299766da07dae001708b396b05c73cd70d4cc
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1563'
-ht-degree: 98%
+ht-degree: 100%
 
 ---
 
