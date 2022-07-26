@@ -1,11 +1,11 @@
 ---
-title: Visão geral do HTL do Adobe Experience Manager
-description: A finalidade do HTL compatível com o AEM é oferecer uma estrutura corporativa da Web altamente produtiva que aumenta a segurança e permite que desenvolvedores de HTML sem conhecimento em Java tenham uma melhor participação nos projetos AEM.
+title: Visão geral do HTL
+description: Saiba como o AEM suporta a linguagem de modelo HTML (HTL) para oferecer uma estrutura Web produtiva de nível empresarial. O HTL aumenta a segurança e permite que desenvolvedores do HTML sem conhecimento em Java tenham uma melhor participação em projetos AEM.
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
-source-wordcount: '667'
-ht-degree: 100%
+source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
+workflow-type: tm+mt
+source-wordcount: '663'
+ht-degree: 95%
 
 ---
 

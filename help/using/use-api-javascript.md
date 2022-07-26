@@ -1,11 +1,11 @@
 ---
 title: API de uso do JavaScript do HTL
-description: A API de uso de JavaScript da Linguagem de modelo HTML (HTL) possibilita que um arquivo HTL acesse o código de ajuda gravado em JavaScript.
+description: Saiba como a API de uso do JavaScript da linguagem do modelo do HTML (HTL) permite que um arquivo HTL acesse o código de ajuda gravado em JavaScript.
 exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
-source-wordcount: '324'
-ht-degree: 100%
+source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
+workflow-type: tm+mt
+source-wordcount: '326'
+ht-degree: 93%
 
 ---
 
