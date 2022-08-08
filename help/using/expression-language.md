@@ -1,11 +1,11 @@
 ---
 title: Linguagem de expressão do HTL
-description: Saiba mais sobre como usar a linguagem de expressão HTL no AEM. A Linguagem de modelo HTML usa uma linguagem de expressão para acessar as estruturas de dados que fornecem os elementos dinâmicos da saída HTML.
+description: Saiba mais sobre como usar a linguagem de expressão do HTL no AEM. A Linguagem de modelo HTML usa uma linguagem de expressão para acessar as estruturas de dados que fornecem os elementos dinâmicos da saída HTML.
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
 source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1860'
-ht-degree: 99%
+ht-degree: 100%
 
 ---
 
