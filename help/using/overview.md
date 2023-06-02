@@ -3,8 +3,8 @@ title: Visão geral do HTL
 description: Saiba como o AEM oferece suporte à Linguagem de modelo HTML (HTL) para entregar uma estrutura Web produtiva de nível empresarial, aumentando a segurança e permitindo que desenvolvedores de HTML sem conhecimento em Java tenham uma melhor participação em projetos do AEM.
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: ht
-source-wordcount: '0'
+workflow-type: tm+mt
+source-wordcount: '711'
 ht-degree: 100%
 
 ---
