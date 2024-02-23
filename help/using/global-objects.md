@@ -3,8 +3,8 @@ title: Objetos globais do HTL
 description: Saiba mais sobre objetos enumeráveis, objetos com suporte de Java e objetos com suporte de JavaScript no HTL.
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: tm+mt
-source-wordcount: '200'
+workflow-type: ht
+source-wordcount: '166'
 ht-degree: 100%
 
 ---

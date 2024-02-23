@@ -3,8 +3,8 @@ title: Introdução ao HTL
 description: Saiba mais sobre HTL, o sistema de modelo do lado do servidor preferencial e recomendado para HTML no AEM, e entenda os principais conceitos dessa linguagem e seus elementos fundamentais.
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: tm+mt
-source-wordcount: '2170'
+workflow-type: ht
+source-wordcount: '2147'
 ht-degree: 100%
 
 ---

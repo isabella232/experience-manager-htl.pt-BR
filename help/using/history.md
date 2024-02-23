@@ -3,8 +3,8 @@ title: Histórico do HTL
 description: Para usuários antigos do AEM, esse documento fornece informações sobre o HTL, sua mudança de nome (ele era anteriormente conhecido como Sightly) e como ele substitui o JSP.
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: tm+mt
-source-wordcount: '542'
+workflow-type: ht
+source-wordcount: '544'
 ht-degree: 100%
 
 ---
